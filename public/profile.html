@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>My Profile</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/vader/jquery-ui.css">
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <a class="brand" href="#">Founder Finder</a>
+        <ul class="nav">
+	      <li class="active"><a href="#">My Profile</a></li>
+	      <li><a href="/matches.html">My Matches</a></li>
+	      <li><a href="#">Logout</a></li>
+   		</ul>
+      </div>
+    </div>
+    <form class="form-horizontal user-info">
+      <h1 class="text-info">Name's Profile</h1>
+      <div class="control-group">
+        <label class="control-label" for="user-name">Your Name:</label>
+        <div class="controls">
+          <input type="text" id="user-name" placeholder="User's Name">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="email">Email:</label>
+        <div class="controls">
+          <input type="text" id="email" placeholder="Email">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="about-me">About Me:</label>
+        <div class="controls">
+          <textarea id="about-me" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="projects">Current Projects:</label>
+        <div class="controls">
+          <textarea id="projects" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="technologies">Technologies:</label>
+        <div class="controls">
+          <input type="text" id="technologies">
+        </div>
+      </div>
+      <div class="control-group">
+      	<h3>My focus as a teamate is:</h3>
+      	<div class="controls">
+      	  <label> Development <input type="text" id="development-value" class="span1" disabled></label>
+          <div id="development-slider" class="slider"></div>
+        </div>
+        <div class="controls">
+      	  <label> Design <input type="text" id="design-value" class="span1" disabled></label>
+          <div id="design-slider" class="slider"></div>
+        </div>
+        <div class="controls">
+      	  <label> Business <input type="text" id="business-value" class="span1" disabled></label>
+          <div id="business-slider" class="slider"></div>
+        </div>
+      </div>
+    </form>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+    <script>
+	  $( "#development-slider" ).slider({ 
+	  	step: 1,
+	  	min: 0,
+	  	max: 12,
+	  	value: 4,
+	  	slide: function(event, ui) {
+	  		$('#development-value').val(ui.value);
+	  	}
+	  });
+	  $( "#design-slider" ).slider({ 
+	  	step: 1,
+	  	min: 0,
+	  	max: 12,
+	  	value: 4,
+	  	slide: function(event, ui) {
+	  		$('#design-value').val(ui.value);
+	  	}
+	  });
+	  $( "#business-slider" ).slider({ 
+	  	step: 1,
+	  	min: 0,
+	  	max: 12,
+	  	value: 4,
+	  	slide: function(event, ui) {
+	  		$('#business-value').val(ui.value);
+	  	}
+	  });
+
+	  $('#development-value').val($('#development-slider').slider("value"));
+	  $('#design-value').val($('#design-slider').slider("value"));
+	  $('#business-value').val($('#business-slider').slider("value"));
+
+	</script>
+  </body>
+</html>
+
