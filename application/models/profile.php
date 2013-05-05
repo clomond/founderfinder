@@ -31,3 +31,12 @@ class Profile extends Eloquent {
 		
 	}
 }
+
+/* Author: Matthew Stokes */
+class User extends Eloquent
+{
+	public function posts()
+	{
+		return $this->has_one('Profile');
+	}
+}
