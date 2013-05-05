@@ -48,22 +48,26 @@ class Users_Controller extends Base_Controller {
 	public function post_create()
 	{
 		$validation = Validator::make(Input::all(), array(
-			'useranme' => array('required'),
+			'username' => array('required', 'unique:users'),
 			'password' => array('required'),
 		));
 
+		# entered data for username and password
 		if($validation->valid())
 		{
 			$user = new User;
 
-			$user->useranme = Input::get('useranme');
+			$user->username = Input::get('username');
 			$user->password = Input::get('password');
 
 			$user->save();
 
 			Session::flash('message', 'Added user #'.$user->id);
 
-			return Redirect::to('users');
+			/* Creating Profile */
+			$this->create_profile($user->id);			
+
+			return Redirect::to('profiles');
 		}
 
 		else
@@ -121,7 +125,7 @@ class Users_Controller extends Base_Controller {
 	public function post_edit($id)
 	{
 		$validation = Validator::make(Input::all(), array(
-			'useranme' => array('required'),
+			'username' => array('required'),
 			'password' => array('required'),
 		));
 
@@ -134,7 +138,7 @@ class Users_Controller extends Base_Controller {
 				return Redirect::to('users');
 			}
 
-			$user->useranme = Input::get('useranme');
+			$user->username = Input::get('username');
 			$user->password = Input::get('password');
 
 			$user->save();
@@ -170,5 +174,22 @@ class Users_Controller extends Base_Controller {
 		}
 
 		return Redirect::to('users');
+	}
+
+	/* ---------------- Adding below this line ---------------------- */
+
+	/**
+	 * Create a new profile.
+	 *
+	 * @return Response
+	 */
+	public function create_profile($id)
+	{
+			$profile = new Profile;
+
+			$profile->user_id = $id;
+			$profile->about_me = "You don't need to know anything about me";
+
+			$profile->save();
 	}
 }
