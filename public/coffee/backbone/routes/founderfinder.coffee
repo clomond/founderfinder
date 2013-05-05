@@ -17,7 +17,7 @@ class FounderFinderRouter extends app.BaseRouter
 				@profileView = new app.ProfileView model: profile
 
 	editProfile:->
-		loginView = new app.LoginView
+		editProfileView = new app.EditProfileView
 
 	profileList:->
 		matchesView = new app.MatchesView
@@ -34,7 +34,7 @@ class FounderFinderRouter extends app.BaseRouter
 @app = window.app ? {}
 @app.FounderFinderRouter = FounderFinderRouter
 
-app.tpl.loadTemplates ["tpl-header", "tpl-profile-row", "tpl-login", "tpl-matches", "tpl-home","tpl-show-profile","tpl-profiles"], ->
+app.tpl.loadTemplates ["tpl-header", "tpl-profile-row", "tpl-edit-profile", "tpl-login", "tpl-matches", "tpl-home","tpl-show-profile","tpl-profiles"], ->
 
 	jQuery ->
 		app.locausRouter = new app.FounderFinderRouter

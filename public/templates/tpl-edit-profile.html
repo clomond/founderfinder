@@ -1,23 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-      <title>My Profile</title>
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/base.css">
-      <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/themes/vader/jquery-ui.css">
-  </head>
-  <body>
-    <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <a class="brand" href="#">Founder Finder</a>
-        <ul class="nav">
-	      <li class="active"><a href="#">My Profile</a></li>
-	      <li><a href="app#profiles">My Matches</a></li>
-	      <li><a href="#">Logout</a></li>
-   		</ul>
-      </div>
-    </div>
-    <form class="form-horizontal user-info">
+<form class="form-horizontal user-info">
       <h1 class="text-info">Name's Profile</h1>
       <div class="control-group">
         <label class="control-label" for="user-name">Your Name:</label>
@@ -52,15 +33,15 @@
       <div class="control-group">
       	<h3>My focus as a teamate is:</h3>
       	<div class="controls">
-      	  <label> Technology <input type="text" id="technology-value" class="span1" disabled></label>
-          <div id="technology-slider" class="slider"></div>
+      	  <label> Technology <input type="text" id="technology-value" value="<%= m.tech_skill %>" class="span1" disabled></label>
+          <div id="technology-slider" class="slider" style="background-color: rgba(0,0,0,0); border: 0; color: red;"></div>
         </div>
         <div class="controls">
-      	  <label> Design <input type="text" id="design-value" class="span1" disabled></label>
+      	  <label> Design <input type="text" id="design-value" class="span1" disabled style="background-color: rgba(0,0,0,0); border: 0; color: red;"></label>
           <div id="design-slider" class="slider"></div>
         </div>
         <div class="controls">
-      	  <label> Business <input type="text" id="business-value" class="span1" disabled></label>
+      	  <label> Business <input type="text" id="business-value" class="span1" disabled style="background-color: rgba(0,0,0,0); border: 0; color: red;"></label>
           <div id="business-slider" class="slider"></div>
         </div>
       </div>
@@ -94,6 +75,8 @@
 	  	max: 12,
 	  	value: 4,
 	  	slide: function(event, ui) {
+	  		if( $('#design-value').val() + $('#business-value').val() + $('#technology-value').val() >= 12){
+	  		}
 	  		$('#technology-value').val(ui.value);
 	  	}
 	  });
@@ -103,6 +86,8 @@
 	  	max: 12,
 	  	value: 4,
 	  	slide: function(event, ui) {
+	  		if( $('#design-value').val() + $('#business-value').val() + $('#technology-value').val() >= 12){
+	  		}
 	  		$('#design-value').val(ui.value);
 	  	}
 	  });
@@ -112,24 +97,18 @@
 	  	max: 12,
 	  	value: 4,
 	  	slide: function(event, ui) {
+	  		if( $('#design-value').val() + $('#business-value').val() + $('#technology-value').val() >= 12){
+	  		}
 	  		$('#business-value').val(ui.value);
 	  	}
 	  });
-
-    $('#business-value').val($( "#business-slider" ).slider("value"));
-    $('#design-value').val($( "#design-slider" ).slider("value"));
-    $('#technology-value').val($( "#technology-slider" ).slider("value"));
-
-    if ($('#developer-select').val() == 1){
+    /*if (<%= m.tech_check %> == 1){
       $('#developer-select').prop('checked', true);
     }
-    if ($('#design-select').val() == 1){
+    if (<%= m.design_check %> == 1){
       $('#design-select').prop('checked', true);
     }
-    if ($('#business-select').val() == 1){
+    if (<%= m.business_check %> == 1){
       $('#business-select').prop('checked', true);
     }
 	</script>
-  </body>
-</html>
-

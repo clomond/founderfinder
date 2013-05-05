@@ -105,7 +105,7 @@ class Api_User_Controller extends Base_Controller {
 		}
 		else
 		{
-			return json_encode(Auth::user());
+			return json_encode(Auth::user()->attributes);
 		}
 
 	}

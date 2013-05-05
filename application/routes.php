@@ -37,7 +37,7 @@
 	return View::make('home.index');
 });*/
 
-//Route::controller(Controller::detect());
+Route::controller(Controller::detect());
 
 Route::get('app', function() {
 	return View::make('app.home')->with('viewName');
@@ -139,7 +139,7 @@ Route::post('login','users@login');
 
 Route::get('logout', function() {
 	Auth::logout();
-	return Redirect::to('/');
+	return Redirect::to('/app');
 });
 
 Route::get('admin', array('before' => 'auth', 'do' => function() {

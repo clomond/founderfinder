@@ -40,8 +40,8 @@
     };
 
     FounderFinderRouter.prototype.editProfile = function() {
-      var loginView;
-      return loginView = new app.LoginView;
+      var editProfileView;
+      return editProfileView = new app.EditProfileView;
     };
 
     FounderFinderRouter.prototype.profileList = function() {
@@ -70,7 +70,7 @@
 
   this.app.FounderFinderRouter = FounderFinderRouter;
 
-  app.tpl.loadTemplates(["tpl-header", "tpl-profile-row", "tpl-login", "tpl-matches", "tpl-home", "tpl-show-profile", "tpl-profiles"], function() {
+  app.tpl.loadTemplates(["tpl-header", "tpl-profile-row", "tpl-edit-profile", "tpl-login", "tpl-matches", "tpl-home", "tpl-show-profile", "tpl-profiles"], function() {
     return jQuery(function() {
       app.locausRouter = new app.FounderFinderRouter;
       return Backbone.history.start();
