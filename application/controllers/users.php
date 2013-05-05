@@ -29,6 +29,23 @@ class Users_Controller extends Base_Controller {
 		$this->layout->content = View::make('users.index')->with('users', $users);
 	}
 
+	public function post_login()
+	{
+		$userdata = array(
+			'username' => Input::get('username'),
+			'password' => Input::get('password')
+			);
+
+			if ( Auth::attempt($userdata) )
+			{
+				return Redirect::to('admin');
+			}
+			else
+			{
+				return Redirect::to('login')->with('login_errors', true);
+			}
+	}
+
 	/**
 	 * Show the form to create a new user.
 	 *
