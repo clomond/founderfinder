@@ -39,6 +39,12 @@
 
 Route::controller(Controller::detect());
 
+Route::get('app', function() {
+	return View::make('app.home')->with('viewName');
+});
+
+Route::get('api/user/current','api.user@current');
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers
