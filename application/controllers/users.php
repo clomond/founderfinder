@@ -139,7 +139,7 @@ class Users_Controller extends Base_Controller {
 			}
 
 			$user->username = Input::get('username');
-			$user->password = Input::get('password');
+			$user->password = Hash::make(Input::get('password'));
 
 			$user->save();
 

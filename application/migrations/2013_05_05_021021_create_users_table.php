@@ -20,6 +20,13 @@ class Create_Users_Table {
 		});
 	}
 
+	/* Author: Matt Stokes */
+	DB::table('users')->insert(array(
+	'username' 	=> 'admin',
+	'nickname' 	=> 'Admin',
+	'password' => Hash::make('password')
+	)); 
+
 	/**
 	 * Revert the changes to the database.
 	 *

@@ -118,3 +118,33 @@ Route::filter('auth', function()
 {
 	if (Auth::guest()) return Redirect::to('login');
 });
+
+/* Author: Matthew Stokes */
+
+Route::get('login', function() {
+	return View::make('profile.login');
+});
+
+Route::post('login', function() {
+
+	$userdata = array(
+	'username' => Input::get('username'),
+	'password' => Input::get('password')
+	);
+
+	if ( Auth::attempt($userdata) )
+	{
+		return Redirect::to('admin');
+	}
+	else
+	{
+		return Redirect::to('login')->with('login_errors', true);
+	}
+
+});
+
+Route::get('logout', function() {
+	Auth::logout();
+	return Redirect::to('/');
+});
+
