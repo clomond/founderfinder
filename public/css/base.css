@@ -18,7 +18,7 @@ body {
 	max-width: 400px;
 }
 
-#development-value{
+#technology-value{
 	background-color: rgba(0,0,0,0);
 	border: 0;
 	color: red;
@@ -63,7 +63,19 @@ td,th
     margin: 0 auto;
 }
 
-#white
-{
-	background: white;
+textarea{
+	color:black;
+}
+
+.profile-table{
+	width:90%;
+	margin-left: 30px;
+}
+
+.profile-row td{
+	padding-bottom: 80px;
+}
+
+.selection{
+	width:30%;
 }
