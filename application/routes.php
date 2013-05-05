@@ -45,6 +45,12 @@ Route::get('app', function() {
 
 Route::get('api/user/current','api.user@current');
 
+Route::get('api/user/login','api.user@login');
+
+Route::get('api/user/create','api.user@create');
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers
@@ -122,26 +128,10 @@ Route::filter('auth', function()
 /* Author: Matthew Stokes */
 
 Route::get('login', function() {
-	return View::make('profile.login');
+	return View::make('profiles.login');
 });
 
-Route::post('login', function() {
-
-	$userdata = array(
-	'username' => Input::get('username'),
-	'password' => Input::get('password')
-	);
-
-	if ( Auth::attempt($userdata) )
-	{
-		return Redirect::to('admin');
-	}
-	else
-	{
-		return Redirect::to('login')->with('login_errors', true);
-	}
-
-});
+Route::post('login','users@login');
 
 Route::get('logout', function() {
 	Auth::logout();

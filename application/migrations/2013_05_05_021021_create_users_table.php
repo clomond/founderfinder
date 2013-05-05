@@ -22,9 +22,8 @@ class Create_Users_Table {
 
 	/* Author: Matt Stokes */
 	DB::table('users')->insert(array(
-	'username' 	=> 'admin',
-	'nickname' 	=> 'Admin',
-	'password' => Hash::make('password')
+		'username' 	=> 'admin',
+		'password' => Hash::make('password')
 	)); 
 
 	/**
