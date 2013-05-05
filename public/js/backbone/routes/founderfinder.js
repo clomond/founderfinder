@@ -27,11 +27,9 @@
 
     FounderFinderRouter.prototype.showProfile = function(id) {
       var profile;
-      console.log("about to get profile");
       profile = new app.Profile({
         id: id
       });
-      console.log("show this profile" + id);
       return profile.fetch({
         success: function(model, response) {
           return this.profileView = new app.ProfileView({
@@ -47,14 +45,8 @@
     };
 
     FounderFinderRouter.prototype.profileList = function() {
-      this.profileCollection = new app.ProfileCollection;
-      return this.profileCollection.fetch({
-        success: function(model, response) {
-          return this.profilesView = new app.ProfilesView({
-            collection: model
-          });
-        }
-      });
+      var matchesView;
+      return matchesView = new app.MatchesView;
     };
 
     FounderFinderRouter.prototype.initialize = function() {
@@ -78,7 +70,7 @@
 
   this.app.FounderFinderRouter = FounderFinderRouter;
 
-  app.tpl.loadTemplates(["tpl-header", "tpl-profile-row", "tpl-login", "tpl-home", "tpl-show-profile", "tpl-profiles"], function() {
+  app.tpl.loadTemplates(["tpl-header", "tpl-profile-row", "tpl-login", "tpl-matches", "tpl-home", "tpl-show-profile", "tpl-profiles"], function() {
     return jQuery(function() {
       app.locausRouter = new app.FounderFinderRouter;
       return Backbone.history.start();

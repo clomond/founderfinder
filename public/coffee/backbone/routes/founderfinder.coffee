@@ -20,11 +20,7 @@ class FounderFinderRouter extends app.BaseRouter
 		loginView = new app.LoginView
 
 	profileList:->
-		@profileCollection = new app.ProfileCollection
-		console.log "here"
-		@profileCollection.fetch
-			success: (model, response) ->
-				@profilesView = new app.ProfilesView collection:model
+		matchesView = new app.MatchesView
 
 	initialize:->
 		currentUser = new app.currentUser
@@ -38,7 +34,7 @@ class FounderFinderRouter extends app.BaseRouter
 @app = window.app ? {}
 @app.FounderFinderRouter = FounderFinderRouter
 
-app.tpl.loadTemplates ["tpl-header", "tpl-profile-row", "tpl-login", "tpl-home","tpl-show-profile","tpl-profiles"], ->
+app.tpl.loadTemplates ["tpl-header", "tpl-profile-row", "tpl-login", "tpl-matches", "tpl-home","tpl-show-profile","tpl-profiles"], ->
 
 	jQuery ->
 		app.locausRouter = new app.FounderFinderRouter

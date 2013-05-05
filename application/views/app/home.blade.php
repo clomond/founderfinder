@@ -8,7 +8,6 @@
 	@parent
 	{{ HTML::script('js/backbone/routes/founderfinder.js') }}
 	{{ HTML::script('js/backbone/views/header.js') }}
-	{{ HTML::script('js/backbone/views/review-view.js') }}
 	{{ HTML::script('js/backbone/views/login.js') }}
 	{{ HTML::script('js/backbone/views/user-view.js') }}
 	{{ HTML::script('js/backbone/views/profile-view.js') }}
