@@ -21,10 +21,10 @@ class Create_Users_Table {
 	}
 
 	/* Author: Matt Stokes */
-	DB::table('users')->insert(array(
-		'username' 	=> 'admin',
-		'password' => Hash::make('password')
-	)); 
+//	DB::table('users')->int(array(
+//	'username' 	=> 'admin',
+//	'password' => 'password'
+//	)); 
 
 	/**
 	 * Revert the changes to the database.

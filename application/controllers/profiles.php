@@ -51,7 +51,14 @@ class Profiles_Controller extends Base_Controller {
 	{
 		$validation = Validator::make(Input::all(), array(
 			'user_id' => array('required', 'integer'),
-			'about_me' => array('required'),
+			'name' => array('name'),
+			'email' => array('email', 'email'),
+			'projects' => array('projects'),
+			'technologies' => array('technologies'),
+			'tech_skill' => array('tech_skill', 'integer'),
+			'design_skill' => array('design_skill', 'integer'),
+			'business_skill' => array('business_skill', 'integer'),
+			'looking_for' => array('looking_for'),
 		));
 
 		if($validation->valid())
@@ -59,7 +66,15 @@ class Profiles_Controller extends Base_Controller {
 			$profile = new Profile;
 
 			$profile->user_id = Input::get('user_id');
-			$profile->about_me = Input::get('about_me');
+
+			$profile->name = Input::get('name');
+			$profile->email = Input::get('email');
+			$profile->projects = Input::get('projects');
+			$profile->technologies = Input::get('technologies');
+			$profile->tech_skill = Input::get('tech_skill');
+			$profile->design_skill = Input::get('design_skill');
+			$profile->business_skill = Input::get('business_skill');
+			$profile->looking_for = Input::get('looking_for');
 
 			$profile->save();
 
@@ -124,7 +139,14 @@ class Profiles_Controller extends Base_Controller {
 	{
 		$validation = Validator::make(Input::all(), array(
 			'user_id' => array('required', 'integer'),
-			'about_me' => array('required'),
+			'name' => array('name'),
+			'email' => array('email', 'email'),
+			'projects' => array('projects'),
+			'technologies' => array('technologies'),
+			'tech_skill' => array('tech_skill', 'integer'),
+			'design_skill' => array('design_skill', 'integer'),
+			'business_skill' => array('business_skill', 'integer'),
+			'looking_for' => array('looking_for'),
 		));
 
 		if($validation->valid())
@@ -138,6 +160,14 @@ class Profiles_Controller extends Base_Controller {
 
 			$profile->user_id = Input::get('user_id');
 			$profile->about_me = Input::get('about_me');
+			$profile->name = Input::get('name');
+			$profile->email = Input::get('email');
+			$profile->projects = Input::get('projects');
+			$profile->technologies = Input::get('technologies');
+			$profile->tech_skill = Input::get('tech_skill');
+			$profile->design_skill = Input::get('design_skill');
+			$profile->business_skill = Input::get('business_skill');
+			$profile->looking_for = Input::get('looking_for');
 
 			$profile->save();
 
@@ -154,23 +184,4 @@ class Profiles_Controller extends Base_Controller {
 		}
 	}
 
-	/**
-	 * Delete a specific profile.
-	 *
-	 * @param  int       $id
-	 * @return Response
-	 */
-	public function get_delete($id)
-	{
-		$profile = Profile::find($id);
-
-		if( ! is_null($profile))
-		{
-			$profile->delete();
-	
-			Session::flash('message', 'Deleted profile #'.$profile->id);
-		}
-	
-		return Redirect::to('profiles');
-	}
 }
