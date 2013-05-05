@@ -188,7 +188,15 @@ class Users_Controller extends Base_Controller {
 			$profile = new Profile;
 
 			$profile->user_id = $id;
-			$profile->about_me = "You don't need to know anything about me";
+			$profile->about_me = "about";
+			$profile->name = "Name";
+			$profile->email = "Email";
+			$profile->projects = "Projects";
+			$profile->technologies = "Technologies";
+			$profile->tech_skill = 0;
+			$profile->design_skill = 0;
+			$profile->business_skill = 0;
+			$profile->looking_for = "Looking For";
 
 			$profile->save();
 	}

@@ -142,3 +142,7 @@ Route::get('logout', function() {
 	return Redirect::to('/');
 });
 
+Route::get('admin', array('before' => 'auth', 'do' => function() {
+$user = Auth::user();
+return View::make('pages.new')->with('user', $user);
+}));
