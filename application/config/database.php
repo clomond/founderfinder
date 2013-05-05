@@ -80,9 +80,9 @@ return array(
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => '127.0.0.1',
-			'database' => 'database',
+			'database' => 'founderfinder',
 			'username' => 'root',
-			'password' => '',
+			'password' => 'root',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
@@ -91,9 +91,9 @@ return array(
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
 			'host'     => '127.0.0.1',
-			'database' => 'database',
+			'database' => 'founderfinder',
 			'username' => 'root',
-			'password' => '',
+			'password' => 'root',
 			'prefix'   => '',
 		),
 
