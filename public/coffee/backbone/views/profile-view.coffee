@@ -109,7 +109,7 @@ class ProfileRowView extends app.BaseView
 	render:->
 		#console.log "rendering"
 		#console.log @model.attributes.attributes
-		@$el.html @template(m: @model.attributes.attributes)
+		@$el.html @template(m: @model.attributes)
 		@$el.attr 'id', @model.id
 		@
 

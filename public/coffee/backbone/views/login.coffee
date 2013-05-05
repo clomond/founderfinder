@@ -33,7 +33,7 @@ class LoginView extends app.BaseView
 		    else # If not, send them back to the home page
 		    	app.currentUser.attributes = data
 		    	app.currentUser.trigger("login")
-		    	window.location.replace "#"
+		    	window.location.replace "../../profile.html"
 		@trigger("login")
 
 	create: (e) ->

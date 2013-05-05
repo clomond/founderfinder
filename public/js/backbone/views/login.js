@@ -51,7 +51,7 @@
           } else {
             app.currentUser.attributes = data;
             app.currentUser.trigger("login");
-            return window.location.replace("#");
+            return window.location.replace("../../profile.html");
           }
         }
       });

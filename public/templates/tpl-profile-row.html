@@ -1,8 +1,8 @@
 <div class="row-profile">
   <tr class="table-success">
-    <td id="fname" style="padding: 40px 5px;"><%= m.name %></td>
+    <td id="fname" style="padding: 40px 5px;" ><a href="#profile/<%= m.id %>"><%= m.name %></a></td>
     <td id="email" style="padding: 40px 5px;"><%= m.email %></td>
     <td id="role" style="padding: 40px 5px;"><%= m.role %></td>
-    <td id="skills" style="padding: 40px 5px;">C++, Javascript, JQuery</td>
+    <td id="skills" style="padding: 40px 5px;"><%= m.technologies %></td>
   </tr>
 </div>

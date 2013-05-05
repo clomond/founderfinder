@@ -173,7 +173,7 @@
 
     ProfileRowView.prototype.render = function() {
       this.$el.html(this.template({
-        m: this.model.attributes.attributes
+        m: this.model.attributes
       }));
       this.$el.attr('id', this.model.id);
       return this;
