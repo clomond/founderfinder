@@ -12,10 +12,73 @@ class Api_Profile_Controller extends Base_Controller {
 	 */
 	public function get_index()
 	{
-		$profiles = Profile::with(array('user'))->get();
-
+		//$profiles = Profile::with(array('user'))->get();
+		$profiles = $this->get_algorithm();
 		return json_encode($profiles);		
 	}
+
+
+	public function cmp($a, $b)
+	{
+    	{
+    if ($a['score'] == $b['score']) {
+        return 0;
+    }
+    return ($a['score'] < $b['score']) ? 1 : -1;
+}
+	}
+
+	public function skill_max($tech, $business, $design)
+	{
+		if($tech > $business && $tech > $design)
+		{
+			return "Technology";
+		}
+		elseif($business > $tech && $business > $design)
+		{
+			return "Business";
+		}
+		else
+		{
+			return "Design";
+		}
+	}
+
+	public function get_algorithm($tech_check=1, $business_check=0, $design_check=0)
+	{
+		$found = Profile::with(array('user'))->get();//DB::table('profiles')->get();
+		//$arr = array();
+		
+		$i=0;
+		while($i < sizeof($found)) //loop through all profiles
+		{
+			$arr[$i]['id'] = $found[$i]->id;
+			$arr[$i]['name'] = $found[$i]->name;
+			$arr[$i]['email'] = $found[$i]->email;
+			$arr[$i]['technologies'] = $found[$i]->technologies;
+
+			$arr[$i]['focus'] = $this->skill_max($found[$i]->tech_skill, $found[$i]->business_skill, $found[$i]->design_check);
+			$arr[$i]['score'] = $found[$i]->tech_skill * $tech_check + $found[$i]->business_skill * $business_check + $found[$i]->design_skill * $design_check;
+			$i = $i + 1;
+		}
+
+		uasort($arr, array($this,"cmp"));
+
+		$i = 0;
+		while($i < 10 && $i < sizeof($arr))
+		{
+			$output[$i] = $arr[$i];
+			$i = $i + 1;
+		}
+		return $output;	
+	}
+
+
+
+
+
+
+
 
 
 	/**

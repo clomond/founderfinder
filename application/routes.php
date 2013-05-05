@@ -137,9 +137,9 @@ Route::get('login', function() {
 
 Route::post('login','users@login');
 
-Route::get('logout', function() {
+Route::get('user/logout', function() {
 	Auth::logout();
-	return Redirect::to('/app');
+	return Redirect::to('app');
 });
 
 Route::get('admin', array('before' => 'auth', 'do' => function() {
