@@ -1,0 +1,32 @@
+<?php namespace Scaffold\Drivers;
+
+use PDO;
+
+class Postgres extends Driver  {
+
+	/**
+	 * List all of the fields of a table in the database.
+	 *
+	 * @return array
+	 */
+	public function fields($table)
+	{
+		$fields = array();
+
+		try
+		{
+			$columns = $this->pdo->query("SELECT * FROM information_schema.columns WHERE table_name = '$table'")->fetchAll(PDO::FETCH_ASSOC);
+	
+			foreach ($columns as $column)
+			{
+				$fields[] = $column['column_name'];
+			}
+		}
+		catch (Exception $e)
+		{
+			throw new Exception($e->errorInfo[2]);
+		}
+
+		return $fields;
+	}
+}
