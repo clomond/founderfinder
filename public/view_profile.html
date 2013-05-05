@@ -17,126 +17,89 @@
    		</ul>
       </div>
     </div>
-    <form class="form-horizontal user-info">
       <h1 class="text-info">Name's Profile</h1>
       <div class="control-group">
-        <label class="control-label" for="user-name">Your Name:</label>
+        <label class="control-label" for="user-name">User's Name:</label>
         <div class="controls">
-          <input type="text" id="user-name" placeholder="User's Name">
+          <span><%= m.name %></span>
         </div>
       </div>
       <div class="control-group">
         <label class="control-label" for="email">Email:</label>
         <div class="controls">
-          <input type="text" id="email" placeholder="Email">
+          <span><%= m.email %></span>
         </div>
       </div>
       <div class="control-group">
         <label class="control-label" for="about-me">About Me:</label>
         <div class="controls">
-          <textarea id="about-me" rows="3" placeholder="Ex. I like turtles."></textarea>
+          <span><%= m.about_me %></span>
         </div>
       </div>
       <div class="control-group">
         <label class="control-label" for="projects">Current Projects:</label>
         <div class="controls">
-          <textarea id="projects" rows="3"></textarea>
+          <span><%= m.projects %></span>
         </div>
       </div>
       <div class="control-group">
         <label class="control-label" for="technologies">Technologies:</label>
         <div class="controls">
-          <input type="text" id="technologies" placeholder="Enter seperated by comma">
+          <span><%= m.technologies %></span>
         </div>
       </div>
       <div class="control-group">
-      	<h3>My focus as a teamate is:</h3>
+      	<h3>Their focus as a teamate is:</h3>
       	<div class="controls">
       	  <label> Technology <input type="text" id="technology-value" class="span1" disabled></label>
-          <div id="technology-slider" class="slider"></div>
+          <div id="technology-slider" class="slider" disabled></div>
         </div>
         <div class="controls">
       	  <label> Design <input type="text" id="design-value" class="span1" disabled></label>
-          <div id="design-slider" class="slider"></div>
+          <div id="design-slider" class="slider" disabled></div>
         </div>
         <div class="controls">
       	  <label> Business <input type="text" id="business-value" class="span1" disabled></label>
-          <div id="business-slider" class="slider"></div>
+          <div id="business-slider" class="slider" disabled></div>
         </div>
       </div>
       <table class="table selection">
         <tr>
           <td>
-    	      <h3>I am looking for:</h3>
+    	      <h3>They are looking for:</h3>
           </td>
           <td>
             <label class="checkbox">
-              <input type="checkbox" id="developer-select"> Developer
+              <input type="checkbox" id="developer-select" disabled> Developer
             </label>
             <label class="checkbox">
-              <input type="checkbox" id="designer-select"> Designer
+              <input type="checkbox" id="designer-select" disabled> Designer
             </label>
             <label class="checkbox">
-              <input type="checkbox" id="business-select"> Business Partner
+              <input type="checkbox" id="business-select" disabled> Business Partner
             </label>
           </td>
         </tr>
       </table>
-      <button id="save-btn" class="btn-primary save-btn" type="submit">Save Info</button>
-    </form>
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
     <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
     <script>
-	  $( "#technology-slider" ).slider({ 
-	  	step: 1,
-	  	min: 0,
-	  	max: 12,
-	  	value: 4,
-	  	slide: function(event, ui) {
-	  		if( $('#design-value').val() + $('#business-value').val() + $('#technology-value').val() >= 12){
-	  		}
-	  		$('#technology-value').val(ui.value);
-	  	}
-	  });
-	  $( "#design-slider" ).slider({ 
-	  	step: 1,
-	  	min: 0,
-	  	max: 12,
-	  	value: 4,
-	  	slide: function(event, ui) {
-	  		if( $('#design-value').val() + $('#business-value').val() + $('#technology-value').val() >= 12){
-	  		}
-	  		$('#design-value').val(ui.value);
-	  	}
-	  });
-	  $( "#business-slider" ).slider({ 
-	  	step: 1,
-	  	min: 0,
-	  	max: 12,
-	  	value: 4,
-	  	slide: function(event, ui) {
-	  		if( $('#design-value').val() + $('#business-value').val() + $('#technology-value').val() >= 12){
-	  		}
-	  		$('#business-value').val(ui.value);
-	  	}
-	  });
-
 	  $('#technology-value').val(<%= m.tech_skill %>);
-    $('#design-value').val(<%= m.design_skill %>);
-    $('#business-value').val(<%= m.business_skill %>);
-    $('#business-slider').slider('value',<%= m.business_skill %>);
-    $('#design-slider').slider('value',<%= m.design_skill %>);
-    $('#technology-slider').slider('value',<%= m.tech_skill %>);
-    if (<%= m.tech_check %> == 1){
-      $('#developer-select').prop('checked', true);
-    }
-    if (<%= m.design_check %> == 1){
-      $('#design-select').prop('checked', true);
-    }
-    if (<%= m.business_check %> == 1){
-      $('#business-select').prop('checked', true);
-    }
+	  $('#design-value').val(<%= m.design_skill %>);
+	  $('#business-value').val(<%= m.business_skill %>);
+	  $('#business-slider').slider('value',<%= m.business_skill %>);
+	  $('#design-slider').slider('value',<%= m.design_skill %>);
+	  $('#technology-slider').slider('value',<%= m.tech_skill %>);
+	  if (<%= m.tech_check %> == 1){
+	  	$('#developer-select').prop('checked', true);
+	  }
+	  if (<%= m.design_check %> == 1){
+	  	$('#design-select').prop('checked', true);
+	  }
+	  if (<%= m.business_check %> == 1){
+	  	$('#business-select').prop('checked', true);
+	  }
 	</script>
   </body>
 </html>
