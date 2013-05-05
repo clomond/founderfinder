@@ -1,0 +1,169 @@
+body {
+
+margin: 0px;
+padding: 0px;
+width:100%;
+background-image: url(img/wild_oliva.png);
+background-repeat: repeat;
+
+}
+.wrapper{
+  margin: 20px auto;
+}
+
+#header-area .navbar-inner {
+  background-image: url(img/woven.png);
+  background-repeat: repeat;
+}
+
+.review-good {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #EEEEEE;
+  background-image: -moz-linear-gradient(top, #EEEEEE, #B5F595);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#EEEEEE), to(#B5F595));
+  background-image: -webkit-linear-gradient(top, #EEEEEE, #B5F595);
+  background-image: -o-linear-gradient(top, #EEEEEE, #B5F595);
+  background-image: linear-gradient(to bottom, #EEEEEE, #B5F595);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffCBF7B5', endColorstr='#ff3cb521', GradientType=0);
+  border-color: #B5F595 #B5F595 #277415;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #B5F595;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  margin: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.review-good:hover,
+.review-good:active,
+.review-good.active,
+.review-good.disabled,
+.review-good[disabled] {
+  color: #ffffff;
+  background-color: #B5F595;
+  *background-color: #B5F595;
+}
+.review-good:active,
+.review-good.active {
+  background-color: #2e8a19 \9;
+}
+
+.review-bad {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #EEEEEE;
+  background-image: -moz-linear-gradient(top, #EEEEEE, #FAA7A7);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#EEEEEE), to(#FAA7A7));
+  background-image: -webkit-linear-gradient(top, #EEEEEE, #FAA7A7);
+  background-image: -o-linear-gradient(top, #EEEEEE, #FAA7A7);
+  background-image: linear-gradient(to bottom, #EEEEEE, #FAA7A7);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffFAC0C0', endColorstr='#ff3cb521', GradientType=0);
+  border-color: #FAA7A7 #FAA7A7 #277415;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #FAA7A7;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  margin: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.review-bad:hover,
+.review-bad:active,
+.review-bad.active,
+.review-bad.disabled,
+.review-bad[disabled] {
+  color: #ffffff;
+  background-color: #FAA7A7;
+  *background-color: #FAA7A7;
+}
+.review-bad:active,
+.review-bad.active {
+  background-color: #2e8a19 \9;
+}
+
+.review-agrees {
+	text-align:center;
+	font-weight:bold;
+	font-size: large;
+	margin-top: 10px;
+  height: 100%;
+	text-shadow: 0.05em 0.05em #000
+}
+
+.review-establishment {
+	margin-top: 5px;
+	font-weight:bold;
+	color:black;
+	font-size: large;
+}
+.review-establishment.review-date {
+  font-size: small;
+  color:#CCCCCC;
+}
+#createRadio .btn-success.active {
+  box-shadow: 1px 1px 1px 2px #B5F595 inset;
+}
+#createRadio .btn-danger.active {
+  box-shadow: 1px 1px 1px 2px #FAA7A7 inset;
+}
+.review-style-container.good {
+  box-shadow: 1px 1px 1px 2px #B5F595;
+  background-color: #B5F595;
+}
+
+.review-text {
+	color: black;
+}
+div.num-agrees {
+  padding-bottom: 10px;
+}
+div.agree-btn {
+  min-height: 100%;
+}
+div.review-row-container {
+  background-color: #414141;
+  background-image: url(img/px_by_Gre3g.png);
+  background-repeat: repeat;
+  border-radius: 15px;
+  border-style: solid;
+  border-color:white;
+  border-width: 1px;
+  margin: 10px 10px 10px 10px;
+}
+div.establishment-row-container {
+  background-color: #414141;
+  background-image: url(img/px_by_Gre3g.png);
+  background-repeat: repeat;
+  border-radius: 15px;
+  border-style: solid;
+  border-color:white;
+  border-width: 1px;
+}
+ul {
+  list-style-type:none;
+}
+.review-text {
+  color:white;
+}
+.establishment-name {
+  color:white;
+}
+.title-text {
+  color:white;
+}
+.static-text {
+  color:#BBBBBB;
+}
+.progress {
+  margin-bottom: 0px;
+}
+hr {
+  margin:0px;
+}
+.search-section {
+  padding-left: 40px;
+  padding-bottom: 20px;
+}
+.nav li {
+  color:#B0B0B0;
+}
+

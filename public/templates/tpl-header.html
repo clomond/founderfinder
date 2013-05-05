@@ -1,0 +1,19 @@
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container" style="padding-left:20px">
+            <a class="brand" href="/app">FounderFinder</a>
+            <div class="nav-tabs">
+                <ul class="nav">
+					<% if ( app.currentUser.attributes.username === "") { %>
+						<li><a href="app#login">Login</a></li>
+					<% } else { %>
+						<li><a href="app#match">Match</a></li>
+						<li><a href="app#profile">Edit Profile</a></li>
+						<li><a href="user/logout">Logout</a></li> 
+					<% } %>
+
+                </ul>
+            </div>
+        </div>
+	</div>
+</div>

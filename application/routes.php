@@ -37,7 +37,7 @@
 	return View::make('home.index');
 });*/
 
-Route::controller(Controller::detect());
+//Route::controller(Controller::detect());
 
 Route::get('app', function() {
 	return View::make('app.home')->with('viewName');
@@ -45,12 +45,16 @@ Route::get('app', function() {
 
 Route::get('api/user/current','api.user@current');
 
+// Should be post???
 Route::get('api/user/login','api.user@login');
-
 Route::get('api/user/create','api.user@create');
 
+Route::post('api/profile/edit','api.profile@edit');
 
+Route::get('api/profile/(:num)', 'api.profile@view');
+Route::get('api/profile', 'api.profile@index');
 
+//Route::get('api/profile/index','api.profile@index');
 /*
 |--------------------------------------------------------------------------
 | Application 404 & 500 Error Handlers
