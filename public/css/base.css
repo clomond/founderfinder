@@ -1,0 +1,37 @@
+.header{
+    font-size: 25px;
+    padding: 20px;
+    text-align:center;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	width:100%;
+	background-image: url('img/binding_dark.png');
+	background-repeat: repeat;
+	padding-top: 40px;
+	padding-left:20px;
+}
+
+.slider{
+	max-width: 400px;
+}
+
+#development-value{
+	background-color: rgba(0,0,0,0);
+	border: 0;
+	color: red;
+}
+
+#design-value{
+	background-color: rgba(0,0,0,0);
+	border: 0;
+	color: red;
+}
+
+#business-value{
+	background-color: rgba(0,0,0,0);
+	border: 0;
+	color: red;
+}
