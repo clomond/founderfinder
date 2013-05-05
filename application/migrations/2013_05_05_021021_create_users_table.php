@@ -13,7 +13,7 @@ class Create_Users_Table {
 		{
 			$table->increments('id');
 
-			$table->string('useranme');
+			$table->string('username');
 			$table->string('password');
 
 			$table->timestamps();

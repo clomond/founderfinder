@@ -167,10 +167,10 @@ class Profiles_Controller extends Base_Controller {
 		if( ! is_null($profile))
 		{
 			$profile->delete();
-
+	
 			Session::flash('message', 'Deleted profile #'.$profile->id);
 		}
-
+	
 		return Redirect::to('profiles');
 	}
 }
