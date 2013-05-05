@@ -19,6 +19,9 @@ class Add_Profile_Parameters {
 		    $table->integer('design_skill');
 		    $table->integer('business_skill');
 		    $table->string('looking_for');
+		    $table->integer('tech_check');
+		    $table->integer('design_check');
+		    $table->integer('business_check');
 		});
 	}
 
