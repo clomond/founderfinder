@@ -121,7 +121,11 @@
 	  		$('#business-value').val(ui.value);
 	  	}
 	  });
-
+    $('#user-name').val(<%= m.name %>);
+    $('#email').val(<%= m.email %>);
+    $('#about-me').val(<%= m.about_me %>);
+    $('#projects').val(<%= m.projects %>);
+    $('#technologies').val(<%= m.technologies %>);
 	  $('#technology-value').val(<%= m.tech_skill %>);
     $('#design-value').val(<%= m.design_skill %>);
     $('#business-value').val(<%= m.business_skill %>);
