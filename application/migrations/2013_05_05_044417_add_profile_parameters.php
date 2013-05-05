@@ -11,9 +11,14 @@ class Add_Profile_Parameters {
 	{
 		Schema::table('profiles', function($table)
 		{
-		   // $table->string('first');
-		   // $table->string('last');
-		   // $table->string('age');
+		    $table->string('name');
+		    $table->string('email');
+		    $table->string('projects');
+		    $table->string('technologies');
+		    $table->integer('tech_skill');
+		    $table->integer('design_skill');
+		    $table->integer('business_skill');
+		    $table->string('looking_for');
 		});
 	}
 

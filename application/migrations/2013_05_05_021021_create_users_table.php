@@ -20,6 +20,12 @@ class Create_Users_Table {
 		});
 	}
 
+	/* Author: Matt Stokes */
+//	DB::table('users')->int(array(
+//	'username' 	=> 'admin',
+//	'password' => 'password'
+//	)); 
+
 	/**
 	 * Revert the changes to the database.
 	 *
